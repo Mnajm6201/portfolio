@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/hobbies.css') }}">
+
+<div class="hobbies-page">
+    <div class="page-header">
+        <h1>My Hobbies</h1>
+        <p class="page-subtitle">Things I love doing in my free time</p>
+    </div>
+
+    <div class="hobbies-grid">
+        {% for hobby in hobbies %}
+        <div class="hobby-card">
+            <div class="hobby-image">
+                <img src="{{ url_for('static', filename='img/' + hobby.image) }}" alt="{{ hobby.title }}">
+                <div class="hobby-overlay">
+                    <h3 class="hobby-title">{{ hobby.title }}</h3>
+                </div>
+            </div>
+            
+            <div class="hobby-content">
+                <h4 class="hobby-title-text">{{ hobby.title }}</h4>
+                <p class="hobby-description">{{ hobby.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
