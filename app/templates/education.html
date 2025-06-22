@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/education.css') }}">
+
+<div class="education-page">
+    <div class="page-header">
+        <h1>Education</h1>
+        <p class="page-subtitle">My academic journey and coursework</p>
+    </div>
+
+    <div class="education-timeline">
+        {% for school in schools %}
+        <div class="education-card">
+            <div class="education-image">
+                <img src="{{ url_for('static', filename='img/' + school.image) }}" alt="{{ school.school }}">
+            </div>
+            
+            <div class="education-content">
+                <div class="education-header">
+                    <h3 class="school-name">{{ school.school }}</h3>
+                    <h4 class="degree-name">{{ school.degree }}</h4>
+                    <div class="education-meta">
+                        <p class="education-dates">{{ school.dates }}</p>
+                        {% if school.gpa %}
+                        <p class="gpa">{{ school.gpa }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="coursework-section">
+                    <h5 class="coursework-title">Relevant Coursework</h5>
+                    <div class="courses-grid">
+                        {% for course in school.courses %}
+                        <span class="course-tag">{{ course }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
