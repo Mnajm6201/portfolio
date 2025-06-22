@@ -28,6 +28,7 @@
         {% endfor %}
     </div>
 
+
     <!-- Travel Map Section -->
     <div class="travel-section">
         <div class="travel-header">
@@ -107,4 +108,5 @@
     var group = new L.featureGroup(places.map(place => L.marker(place.coords)));
     map.fitBounds(group.getBounds().pad(0.1));
 </script>
+</div>
 {% endblock %}
