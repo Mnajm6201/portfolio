@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/experience.css') }}">
+
+<div class="experience-page">
+    <div class="page-header">
+        <h1>Work Experience</h1>
+        <p class="page-subtitle">My professional journey and key accomplishments</p>
+    </div>
+
+    <div class="experiences-container">
+        {% for experience in experiences %}
+        <div class="experience-card">
+            <div class="experience-image">
+                <img src="{{ url_for('static', filename='img/' + experience.image_path) }}" alt="{{ experience.company }}">
+            </div>
+            
+            <div class="experience-content">
+                <div class="experience-header">
+                    <h3 class="job-title">{{ experience.title }}</h3>
+                    <h4 class="company-name">{{ experience.company }}</h4>
+                    <p class="job-dates">{{ experience.dates }}</p>
+                </div>
+                
+                <div class="experience-description">
+                    <ul class="accomplishments">
+                        {% for item in experience.description %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
