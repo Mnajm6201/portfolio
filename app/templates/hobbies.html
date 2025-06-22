@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/hobbies.css') }}">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<div class="hobbies-page">
+    <div class="page-header">
+        <h1>My Hobbies</h1>
+        <p class="page-subtitle">Things I love doing in my free time</p>
+    </div>
+
+    <div class="hobbies-grid">
+        {% for hobby in hobbies %}
+        <div class="hobby-card">
+            <div class="hobby-image">
+                <img src="{{ url_for('static', filename='img/' + hobby.image) }}" alt="{{ hobby.title }}">
+                <div class="hobby-overlay">
+                    <h3 class="hobby-title">{{ hobby.title }}</h3>
+                </div>
+            </div>
+            
+            <div class="hobby-content">
+                <h4 class="hobby-title-text">{{ hobby.title }}</h4>
+                <p class="hobby-description">{{ hobby.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+    <!-- Travel Map Section -->
+    <div class="travel-section">
+        <div class="travel-header">
+            <h2>Places I've Explored</h2>
+            <p class="travel-subtitle">Click on the markers to see where I've been!</p>
+        </div>
+        <div id="travel-map" class="travel-map"></div>
+    </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+    // Initialize the map
+    var map = L.map('travel-map').setView([40.7128, -74.0060], 4); // Centered on NYC, zoomed out
+
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors',
+        maxZoom: 18,
+    }).addTo(map);
+
+    // Define places I've visited
+    var places = [
+        {
+            name: "Istanbul, Turkey",
+            coords: [41.0082, 28.9784],
+            description: "My favorite city! Amazing history, culture, and food.",
+            icon: "🏛️"
+        },
+        {
+            name: "Izmir, Turkey", 
+            coords: [38.4192, 27.1287],
+            description: "Beautiful coastal city with incredible seafood.",
+            icon: "🌊"
+        },
+        {
+            name: "New York City, NY",
+            coords: [40.7128, -74.0060],
+            description: "Home base! The city that never sleeps.",
+            icon: "🗽"
+        },
+        {
+            name: "New Jersey",
+            coords: [40.2206, -74.7562],
+            description: "Great beaches and close to NYC.",
+            icon: "🏖️"
+        },
+        {
+            name: "Pennsylvania",
+            coords: [40.2732, -76.8751],
+            description: "Love the history and Philadelphia cheesesteaks!",
+            icon: "🥪"
+        },
+        {
+            name: "Texas",
+            coords: [31.9686, -99.9018],
+            description: "Everything really is bigger in Texas!",
+            icon: "🤠"
+        }
+    ];
+
+    // Add markers for each place
+    places.forEach(function(place) {
+        var marker = L.marker(place.coords).addTo(map);
+        
+        var popupContent = `
+            <div class="map-popup">
+                <h4>${place.icon} ${place.name}</h4>
+                <p>${place.description}</p>
+            </div>
+        `;
+        
+        marker.bindPopup(popupContent);
+    });
+
+    // Fit map to show all markers
+    var group = new L.featureGroup(places.map(place => L.marker(place.coords)));
+    map.fitBounds(group.getBounds().pad(0.1));
+</script>
+</div>
+{% endblock %}
