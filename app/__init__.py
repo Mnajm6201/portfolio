@@ -194,24 +194,3 @@ def contact():
     return render_template('contact.html', 
                          title="Contact - MLH Fellow", 
                          url=os.getenv("URL"))
-
-# Add routes for other pages (we'll create templates later)
-@app.route('/experience')
-def experience():
-    return render_template('experience.html', title="Experience - MLH Fellow", url=os.getenv("URL"))
-
-@app.route('/education')
-def education():
-    return render_template('education.html', title="Education - MLH Fellow", url=os.getenv("URL"))
-
-@app.route('/projects')
-def projects():
-    return render_template('projects.html', title="Projects - MLH Fellow", url=os.getenv("URL"))
-
-@app.route('/hobbies')
-def hobbies():
-    return render_template('hobbies.html', title="Hobbies - MLH Fellow", url=os.getenv("URL"))
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html', title="Contact - MLH Fellow", url=os.getenv("URL"))
