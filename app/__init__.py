@@ -194,4 +194,3 @@ def contact():
     return render_template('contact.html', 
                          title="Contact - MLH Fellow", 
                          url=os.getenv("URL"))
-
