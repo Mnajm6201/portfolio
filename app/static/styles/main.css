@@ -98,6 +98,28 @@ body {
     text-align: center;
     height: 320px;
     margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px ;
+}
+
+
+.profile-content {
+    color: white;
+    text-align: left;  /* ← Left align the text */
+}
+
+.profile-content h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.profile-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
 }
 
 .profile h1 {
@@ -117,8 +139,10 @@ body {
 }
 
 .profile .profile-picture {
-    margin-bottom: 30px;
+    margin-bottom: 30px; 
+    margin-right: 40px;  
     height: 200px;
+    flex-shrink: 0;  
 }
 
 .banner {
