@@ -20,14 +20,31 @@
 </head>
 
 <body>
+
+    <!-- Nav Bar -->
     <header class="nav-bar">
+
         <div class="nav-content">
             <a href="/">
                 <div class="nav-logo">
                     <img src="{{ url_for('static', filename='img/logo.svg') }}" />
                 </div>
             </a>
+
+            <nav>
+                <ul class="nav-menu">
+                    {% for item in menu_items %}
+                    <li class="nav-item">
+                        <a href="{{ item.url }}" 
+                           class="nav-link {% if request.endpoint == item.endpoint %}active{% endif %}">
+                            {{ item.name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </nav>            
         </div>
+        
     </header>
 
     {% block content %}{% endblock %}
