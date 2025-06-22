@@ -11,24 +11,68 @@ body {
     margin: 0px;
 }
 
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
 .nav-bar {
     width: 100%;
-    display: inline-block;
-    background-color: #1C539F;
+    display: block;
+    background-color: #0d1117;
     font-family: "Roboto", serif;
     font-weight: 700 !important;
     padding-top: 10px;
+    /* box-shadow: 0 4px 12px rgba(104, 100, 100, 0.6); 
+    margin-bottom: 0.5px; */
+}
+
+.nav-menu{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #ffd700;  
+    transform: scale(1.01);  
+
+    margin: 0 10px;  
+}
+
+.nav-link.active {
+    color: #ffdf00;
+    font-weight: 600;  
 }
 
 .nav-content .logo-touch-target {
     display: inline-flex;
     height: 60%;
     width: 350px;
+    border-radius: 4px;
+    transition: all 0.3s ease; 
 }
 
 .nav-content .nav-logo {
     height: 60px;
-    margin: auto;
 }
 
 .nav-logo {
@@ -42,12 +86,12 @@ body {
 }
 
 .nav-content nav {
-    display: block;
-    width: 100%;
-    text-align: right;
-    padding-top: 0px;
-    padding-right: 0px;
+    display: flex;
+    gap: 20px;
 }
+
+
+
 
 .profile {
     background-color: #1d539f !important;
