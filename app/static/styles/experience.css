@@ -35,8 +35,10 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
+    flex-direction: column; /* ← Add this to stack vertically */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 .experience-card:hover {
     transform: translateY(-5px);
@@ -44,8 +46,8 @@
 }
 
 .experience-image {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 500px; 
     flex-shrink: 0;
     background: #f8f9fa;
     display: flex;
@@ -54,10 +56,11 @@
     padding: 20px;
 }
 
+
 .experience-image img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ← This will fill the container and crop if needed */
     border-radius: 8px;
 }
 
@@ -113,9 +116,9 @@
 }
 
 .accomplishments li:before {
-    content: "▶";
-    color: #ffd700;
-    font-size: 12px;
+    content: "•";  
+    color: #333;   
+    font-size: 16px;  
     position: absolute;
     left: 0;
     top: 2px;
@@ -150,12 +153,11 @@
 }
 
 
-.experience-card:nth-child(even) {
-    flex-direction: row-reverse;
-}
+
 
 @media (max-width: 768px) {
     .experience-card:nth-child(even) {
         flex-direction: column;
     }
 }
+
