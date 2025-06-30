@@ -17,7 +17,7 @@ EXPERIENCES = [
             'Developing an interactive learning portal that delivers on-demand modules to transit employees and tracks completion analytics for training leads.',
             'Creating a companion mobile digital sign-in sheet connected to a secure server, capturing daily hours and automating supervisor approvals across depots.'
         ],
-        'image_path': 'experience_mta.jpg'
+        'image_path': 'experience_MTA.gif'
     },
     {
         'title': 'Production Engineering Fellow',
@@ -27,7 +27,7 @@ EXPERIENCES = [
             'Engaged in a Meta-sponsored fellowship focused on site reliability: Linux internals, container orchestration, databases, CI/CD, monitoring, and incident response.',
             'Collaborating with Meta engineers and 20+ fellows in Agile sprints; implementing test pipelines to reach 90% code coverage.'
         ],
-        'image_path': 'experience_meta.jpg'
+        'image_path': 'experience_MLH.gif'
     },
     {
         'title': 'Software Engineering Intern',
@@ -36,7 +36,7 @@ EXPERIENCES = [
         'description': [
             'Expected to contribute to Python/Go micro-services, high-volume data pipelines, and CI/CD automation powering near-real-time insights for global brands.'
         ],
-        'image_path': 'experience_unadat.jpg'
+        'image_path': 'experience_unadat.png'
     },
     {
         'title': 'Data Science Fellow',
@@ -45,7 +45,7 @@ EXPERIENCES = [
         'description': [
             'Selected for a year-long industry program emphasizing Python, SQL, machine-learning pipelines, and professional development.'
         ],
-        'image_path': 'experience_cunytech.jpg'
+        'image_path': 'experience_ctp.png'
     },
     {
         'title': 'Fellow',
@@ -87,7 +87,7 @@ EDUCATION = [
             'Web Applications',
             'Operating Systems'
         ],
-        'image': 'education_brooklyn.jpg'
+        'image': 'education_brooklyn.webp'
     },
     {
         'school': 'Kingsborough Community College',
@@ -109,37 +109,37 @@ HOBBIES = [
     {
         'title': 'Reading',
         'description': "I read a lot - everything from fantasy and sci-fi to philosophy. Always have a book going and love finding new authors that make me think differently. My favorite book is The Brothers Karamazov, and I'm currently reading The Wheel of Time series (I'm on book five!)",
-        'image': 'hobby_reading.jpg'
+        'image': 'hobbies_reading.jpg'
     },
     {
         'title': 'Cinema',
         'description': "Big movie fan. I watch everything from blockbusters to foreign films. My Top four: The Godfather, Excalibur, Cinema Paradisio, and The Lord of the Rings series (yes that counts as one)",
-        'image': 'hobby_cinema.jpg'
+        'image': 'hobbies_cinema.webp'
     },
     {
         'title': 'History',
         'description': "History is wild - real events are often crazier than fiction. I love learning about how we got to where we are today. I love reading any type of history, but I particularly love Greek and Roman antiquity.",
-        'image': 'hobby_history.jpg'
+        'image': 'hobbies_history.webp'
     },
     {
         'title': 'Gaming',
         'description': "I play strategy games mostly, but also enjoy exploring new worlds and solving puzzles. Great way to relax and keep my mind sharp. My favorite games include Disco Elysium, Kingdom Come Deliverance, and Crusader Kings 3. I also love board games like Scythe and Catan, card games like Magic the Gathering, and RPGs like Dungeons and Dragons",
-        'image': 'hobby_gaming.jpg'
+        'image': 'hobbies_gaming.webp'
     },
     {
         'title': 'Learning',
         'description': "Always picking up new skills or diving into random topics that catch my interest. Can't help being curious about how things work. Whether its learning a new langauge (French atm), a new tech stack, or a new obssession (making the PERFECT cup of coffee), I love getting lost in a rabbit hole, and coming out with a new skill, hobby or area of knowledge",
-        'image': 'hobby_learning.jpg'
+        'image': 'hobbies_learning.jpg'
     },
     {
         'title': 'Chess',
         'description': "Been playing chess for years. Love the mental challenge and trying to think a few moves ahead. I do not claim to be very good, but I do think I am good at getting better. My favorite openings are the Italian game ofr white, and the Caro Khan for black",
-        'image': 'hobby_chess.jpg'
+        'image': 'hobbies_chess.png'
     },
     {
         'title': 'Traveling',
         'description': "Enjoy exploring new places and experiencing different cultures. Good food and interesting conversations with locals are the best parts. I have not gotten to travel a great deal, but the places I have been will stay in my memories for ever. My favorite city is Istanbul",
-        'image': 'hobby_traveling.jpg'
+        'image': 'hobbies_traveling.jpg'
     }
 ]
 
