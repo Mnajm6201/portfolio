@@ -173,6 +173,7 @@ MENU_ITEMS = [
     {'name': 'Education', 'url': '/education', 'endpoint': 'education'},
     {'name': 'Projects', 'url': '/projects', 'endpoint': 'projects'},
     {'name': 'Hobbies', 'url': '/hobbies', 'endpoint': 'hobbies'},
+    {'name': 'Timeline', 'url': '/timeline', 'endpoint': 'timeline'},
     {'name': 'Contact', 'url': '/contact', 'endpoint': 'contact'},
 ]
 
@@ -191,6 +192,13 @@ def experience():
                          title="Experience - MLH Fellow", 
                          url=os.getenv("URL"),
                          experiences=EXPERIENCES)
+
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', 
+                         title="Timeline - MLH Fellow", 
+                         url=os.getenv("URL"))
+
 
 @app.route('/education')
 def education():

@@ -1,0 +1,261 @@
+.timeline-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f5f5f9;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #0d1117;
+    margin-bottom: 10px;
+}
+
+.page-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+}
+
+/* Form Styles */
+.timeline-form-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-form-container h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0d1117;
+    margin: 0 0 25px 0;
+    text-align: center;
+}
+
+.timeline-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0d1117;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: "Roboto", serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1d539f;
+    box-shadow: 0 0 0 3px rgba(29, 83, 159, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #1d539f, #2a6bc7);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center;
+    min-width: 200px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(135deg, #2a6bc7, #1d539f);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(29, 83, 159, 0.3);
+}
+
+.submit-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Timeline Posts Styles */
+.timeline-posts-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-posts-container h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #0d1117;
+    margin: 0 0 25px 0;
+    text-align: center;
+}
+
+.timeline-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.timeline-post {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.timeline-post:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.post-info {
+    flex: 1;
+}
+
+.post-author {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0d1117;
+    margin: 0 0 5px 0;
+}
+
+.post-date {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    font-style: italic;
+}
+
+.post-content {
+    margin-top: 10px;
+}
+
+.post-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin: 0;
+}
+
+/* Loading and No Posts States */
+.loading,
+.no-posts {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-style: italic;
+}
+
+.no-posts p {
+    font-size: 18px;
+    color: #999;
+}
+
+/* Message Styles */
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-page {
+        padding: 20px 15px;
+    }
+    
+    .page-header h1 {
+        font-size: 36px;
+    }
+    
+    .timeline-form-container,
+    .timeline-posts-container {
+        padding: 20px;
+    }
+    
+    .timeline-form-container h2,
+    .timeline-posts-container h2 {
+        font-size: 20px;
+    }
+    
+    .submit-btn {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group input,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    .submit-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+    
+    .post-author {
+        font-size: 16px;
+    }
+    
+    .post-content p {
+        font-size: 14px;
+    }
+}
