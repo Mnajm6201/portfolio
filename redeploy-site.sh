@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Kill all existing tmux sessions
-tmux kill-server 2>/dev/null
 
 # Navigate to project directory
 cd ~/portfolio || {
@@ -16,5 +14,6 @@ git fetch && git reset origin/main --hard
 source venv/bin/activate
 pip install -r requirements.txt
 
-# Start new tmux session running the Flask app
-tmux new-session -d -s flask-session "source venv/bin/activate && flask run --host=0.0.0.0"
+# Restart the systemd service
+systemctl daemon-reload
+systemctl restart myportfolio
