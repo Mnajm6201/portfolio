@@ -10,10 +10,8 @@ cd ~/portfolio || {
 # Reset local repo to match main branch
 git fetch && git reset origin/main --hard
 
-# Activate virtual environment, install dependencies
-source venv/bin/activate
-pip install -r requirements.txt
+# spin containers down to prevent out of memory issues
+docker compose -f docker-compose.prod.yml down
 
-# Restart the systemd service
-systemctl daemon-reload
-systemctl restart myportfolio
+# Rebuild and start container
+docker compose -f docker-compose.prod.yml up -d --build
