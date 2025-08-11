@@ -1,13 +1,16 @@
 name: Deploy
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: ["Run Tests"]
+    types: [completed]
   workflow_dispatch:
 
 jobs:
   deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success'
+            && github.event.workflow_run.event == 'push'
+            && github.event.workflow_run.head_branch == 'main' }}
     name: "Deploy to VPS"
     runs-on: ubuntu-latest
     steps:
@@ -30,3 +33,16 @@ jobs:
 
       - name: Deploy site
         run: ssh my-vps "cd ${{ secrets.PROJECT_ROOT }} && chmod +x redeploy-site.sh && ./redeploy-site.sh"
+
+      - name: Container status
+        if: success()
+        run: ssh my-vps "cd ${{ secrets.PROJECT_ROOT }} && (docker compose ps || docker-compose ps)"
+
+      - name: Notify Discord (success)
+        if: success()
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 Deployment Successful"
+
+      - name: Notify Discord (failure)
+        if: failure()
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 Deployment Failed"
+    
