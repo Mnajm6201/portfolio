@@ -137,7 +137,7 @@ EDUCATION = [
 HOBBIES = [
     {
         'title': 'Reading',
-        'description': "I read a lot - everything from fantasy and sci-fi to philosophy. Always have a book going and love finding new authors that make me think differently. My favorite book is The Brothers Karamazov, and I'm currently reading The Wheel of Time series (I'm on book seven!)",
+        'description': "I read a lot - everything from fantasy and sci-fi to philosophy. Always have a book going and love finding new authors that make me think differently. My favorite book is The Brothers Karamazov, and I'm currently reading The Wheel of Time series (I'm on book eight!)",
         'image': 'hobbies_reading.jpg'
     },
     {
